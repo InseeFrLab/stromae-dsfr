@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
-import { OidcProvider } from './oidc/OidcProvider.tsx'
+import { OidcProvider } from 'oidc'
 import { RouterProvider } from 'react-router-dom'
 import { router } from './router/router.tsx'
 

@@ -2,7 +2,7 @@ import { createBrowserRouter } from "react-router-dom"
 import { Layout } from "./Layout";
 import { ProtectedPage } from "../pages/ProtectedPage";
 import { PublicPage } from "../pages/PublicPage";
-import { RequiresAuthentication } from "oidc/RequiresAuth";
+import { prOidc } from "oidc";
 
 export const router = createBrowserRouter(
   [
@@ -12,7 +12,8 @@ export const router = createBrowserRouter(
       children: [
         {
           path: 'protected',
-          element: <RequiresAuthentication><ProtectedPage /></RequiresAuthentication>,
+          element: <ProtectedPage />,
+          loader: protectedRouteLoader
         },
         {
           index: true,
@@ -24,3 +25,17 @@ export const router = createBrowserRouter(
         },
       ]
     }], { basename: "/v3" });
+
+async function protectedRouteLoader() {
+
+  const oidc = await prOidc;
+
+  if (oidc.isUserLoggedIn) {
+    return;
+  }
+
+  await oidc.login({
+    doesCurrentHrefRequiresAuth: true
+  });
+
+}
