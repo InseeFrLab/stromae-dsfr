@@ -12,19 +12,16 @@ export const router = createBrowserRouter(
       children: [
         {
           path: 'protected',
-          element: <ProtectedPage />,
+          Component: ProtectedPage,
           loader: protectedRouteLoader
         },
         {
           index: true,
           Component: PublicPage
         },
-        {
-          path: 'visualize',
-          element: <div>Visualize</div>,
-        },
+
       ]
-    }], { basename: "/v3" });
+    }]);
 
 async function protectedRouteLoader() {
 
