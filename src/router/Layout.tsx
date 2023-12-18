@@ -15,13 +15,8 @@ export function Layout() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <AuthStatus />
-      </div>
-      <p className="read-the-docs">
-        <Outlet />
-      </p>
+      <Outlet />
+      <AuthStatus />
     </>
   )
 }

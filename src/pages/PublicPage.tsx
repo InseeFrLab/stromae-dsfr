@@ -1,3 +1,3 @@
 export function PublicPage() {
-  return <>Public</>;
+  return <h1>Public Page</h1>;
 }

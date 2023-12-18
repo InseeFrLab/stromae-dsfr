@@ -1,3 +1,4 @@
+import { useUser } from 'oidc';
 import { useOidc } from 'oidc-spa/react'
 
 export function AuthStatus() {
@@ -23,19 +24,20 @@ export function AuthStatus() {
     );
   }
 
+  return <AppLoggedIn logout={() => oidc.logout({ redirectTo: "home" })}
+  />
+}
+
+
+function AppLoggedIn(props: { logout: () => Promise<never> }) {
+  const { logout } = props;
+
+  const { user } = useUser();
+
   return (
     <>
-      <p>
-
-        You're are logged in.
-      </p>
-      <button
-        onClick={() =>
-          oidc.logout({ redirectTo: "home" })
-        }
-      >
-        Logout
-      </button>
+      <p>Hello {user.preferred_username}</p>
+      <button onClick={logout}>Log out</button>
     </>
-  )
+  );
 }
