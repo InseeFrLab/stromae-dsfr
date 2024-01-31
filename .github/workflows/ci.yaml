@@ -59,7 +59,7 @@ jobs:
           OUT=$GITHUB_REPOSITORY:$TO_VERSION,$GITHUB_REPOSITORY:latest
           OUT=$(echo "$OUT" | awk '{print tolower($0)}') 
           echo "docker_tags=$OUT" >> "$GITHUB_OUTPUT"
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         with:
           name: dist
           path: dist
