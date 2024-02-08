@@ -22,4 +22,3 @@ export type PageType =
   | 'endPage'
   | 'lunaticPage'
   | 'downloadPage'
-  | 'validationModal'

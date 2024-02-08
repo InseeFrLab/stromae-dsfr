@@ -31,7 +31,6 @@ export function Navigation(
       case 'endPage':
         return "Télécharger l'accusé de réception"
       case 'validationPage':
-      case 'validationModal':
         return 'Envoyer mes réponses'
     }
   }, [currentPage])
