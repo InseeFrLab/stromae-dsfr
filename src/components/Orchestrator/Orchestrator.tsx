@@ -17,9 +17,6 @@ import { EndPage } from './CustomPages/EndPage'
 import { ValidationModal } from './CustomPages/ValidationModal'
 import { assert } from 'tsafe/assert'
 
-
-
-
 export function Orchestrator(props: {
   source: LunaticSource
   surveyUnitData?: SurveyUnitData
@@ -47,7 +44,9 @@ export function Orchestrator(props: {
     initialPage: initialCurrentPage,
   })
 
-  const [validationModalActions] = useState<{ open?: () => Promise<{ doProceed: boolean; }>; }>({})
+  const [validationModalActions] = useState<{
+    open?: () => Promise<{ doProceed: boolean }>
+  }>({})
 
   const { currentPage, goNext, goPrevious } = useStromaeNavigation({
     goNextLunatic,
@@ -55,10 +54,10 @@ export function Orchestrator(props: {
     isFirstPage,
     isLastPage,
     initialCurrentPage,
-    openValidationModal: ()=> {
-      assert(validationModalActions.open !== undefined);
-      return validationModalActions.open();
-    }
+    openValidationModal: () => {
+      assert(validationModalActions.open !== undefined)
+      return validationModalActions.open()
+    },
   })
 
   const getStateData = (): StateData => {

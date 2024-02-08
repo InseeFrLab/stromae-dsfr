@@ -8,7 +8,7 @@ type Params = {
   initialCurrentPage: string | undefined
   goNextLunatic: () => void
   goPrevLunatic: () => void
-  openValidationModal: () => Promise<{ doProceed: boolean; }>
+  openValidationModal: () => Promise<{ doProceed: boolean }>
 }
 
 export function useStromaeNavigation({
@@ -17,9 +17,8 @@ export function useStromaeNavigation({
   goNextLunatic,
   goPrevLunatic,
   initialCurrentPage,
-  openValidationModal
+  openValidationModal,
 }: Params) {
-
   const getInitialCurrentPage = () => {
     switch (initialCurrentPage) {
       case undefined:
@@ -43,15 +42,12 @@ export function useStromaeNavigation({
       case 'validationPage':
         //return setCurrentPage('validationModal')
         openValidationModal().then(({ doProceed }) => {
-          console.log(doProceed);
           if (!doProceed) {
-            return;
+            return
           }
-
           setCurrentPage('endPage')
-
-        });
-        return;
+        })
+        return
       case 'welcomePage':
         return setCurrentPage('lunaticPage')
       case 'lunaticPage':
@@ -59,9 +55,9 @@ export function useStromaeNavigation({
       case 'endPage':
         return setCurrentPage('downloadPage')
       case 'downloadPage':
-        return;
+        return
     }
-    assert<Equals<typeof currentPage, never>>(false);
+    assert<Equals<typeof currentPage, never>>(false)
   }
   const goPrevious = () => {
     switch (currentPage) {
@@ -69,12 +65,12 @@ export function useStromaeNavigation({
         return setCurrentPage('lunaticPage')
       case 'lunaticPage':
         return isFirstPage ? setCurrentPage('welcomePage') : goPrevLunatic()
-      case "downloadPage":
-      case "endPage":
-      case "welcomePage":
-        return;
+      case 'downloadPage':
+      case 'endPage':
+      case 'welcomePage':
+        return
     }
-    assert<Equals<typeof currentPage, never>>(false);
+    assert<Equals<typeof currentPage, never>>(false)
   }
 
   return { goNext, goPrevious, currentPage: currentPage }

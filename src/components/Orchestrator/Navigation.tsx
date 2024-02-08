@@ -35,7 +35,9 @@ export function Navigation(
     }
   }, [currentPage])
 
-  const isPreviousButtonDisable = ['welcomePage', "endPage"].includes(currentPage)
+  const isPreviousButtonDisable = ['welcomePage', 'endPage'].includes(
+    currentPage
+  )
 
   return (
     <>
@@ -46,7 +48,9 @@ export function Navigation(
         iconId="fr-icon-arrow-left-line"
         onClick={handlePreviousClick}
         disabled={isPreviousButtonDisable}
-        className={css({ visibility: isPreviousButtonDisable ? 'hidden' : 'visible' })}
+        className={css({
+          visibility: isPreviousButtonDisable ? 'hidden' : 'visible',
+        })}
       >
         Précédent
       </Button>

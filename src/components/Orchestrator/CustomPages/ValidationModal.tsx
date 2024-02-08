@@ -24,8 +24,8 @@ export function ValidationModal(props: Props) {
 
   const [openState, setOpenState] = useState<
     | {
-      resolve: (params: { doProceed: boolean }) => void
-    }
+        resolve: (params: { doProceed: boolean }) => void
+      }
     | undefined
   >(undefined)
 
@@ -41,16 +41,12 @@ export function ValidationModal(props: Props) {
 
   useIsModalOpen(modal, {
     onConceal: async () => {
+      //Until react-dsfr fix this issue of onConceal call before click
+      await new Promise((resolve) => setTimeout(resolve, 0))
 
-      await Promise.resolve();
+      openState?.resolve({ doProceed: false })
 
-      if (openState === undefined) {
-        return;
-      }
-
-      openState.resolve({ doProceed: false })
-
-      setOpenState(undefined);
+      setOpenState(undefined)
     },
   })
 
@@ -66,8 +62,7 @@ export function ValidationModal(props: Props) {
 
             openState?.resolve({ doProceed: false })
 
-            setOpenState(undefined);
-
+            setOpenState(undefined)
           },
         },
         {
