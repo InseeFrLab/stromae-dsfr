@@ -1,5 +1,4 @@
 import { createModal } from '@codegouvfr/react-dsfr/Modal'
-import { useIsModalOpen } from '@codegouvfr/react-dsfr/Modal/useIsModalOpen'
 import { useState, useEffect, useId } from 'react'
 import { assert } from 'tsafe/assert'
 
@@ -39,17 +38,6 @@ export function ValidationModal(props: Props) {
       })
   }, [])
 
-  useIsModalOpen(modal, {
-    onConceal: async () => {
-      //Until react-dsfr fix this issue of onConceal call before click
-      await new Promise((resolve) => setTimeout(resolve, 0))
-
-      openState?.resolve({ doProceed: false })
-
-      setOpenState(undefined)
-    },
-  })
-
   return (
     <modal.Component
       title="Voulez vous envoyer vos réponses"
@@ -57,13 +45,6 @@ export function ValidationModal(props: Props) {
         {
           doClosesModal: true, //Default true, clicking a button close the modal.
           children: 'Annuler',
-          onClick: () => {
-            assert(openState !== undefined)
-
-            openState?.resolve({ doProceed: false })
-
-            setOpenState(undefined)
-          },
         },
         {
           doClosesModal: true,
