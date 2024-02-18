@@ -852,9 +852,9 @@
     "@tanstack/query-core" "5.18.1"
 
 "@tanstack/react-router@^1.15.23":
-  version "1.15.23"
-  resolved "https://registry.yarnpkg.com/@tanstack/react-router/-/react-router-1.15.23.tgz#1f87ab2c72ee20d6a6901e2b54e4aad56fe8caa8"
-  integrity sha512-C9d1Wj8n28z+qclMiiDFxR9Ydxu7/7Gv9hm9I0H1yiKyxXzoGTbcT2x8znsM8Fouqw2DtAW5NsFw9FVtvz9zfQ==
+  version "1.16.6"
+  resolved "https://registry.yarnpkg.com/@tanstack/react-router/-/react-router-1.16.6.tgz#5395b73467c099338b7f31d92ac20a69e7dbe2b8"
+  integrity sha512-d1Kjs38IF3bH7jKwihMBrdnh7BMVOHSNhJ9sltCiP4gLHcZkG7V9BwwJn5yL4V7YHIPNxdrJ3v4yrkvdrPJ0Ww==
   dependencies:
     "@tanstack/history" "1.15.13"
     "@tanstack/react-store" "^0.2.1"
