@@ -228,9 +228,9 @@
     to-fast-properties "^2.0.0"
 
 "@codegouvfr/react-dsfr@^1.7.2":
-  version "1.7.2"
-  resolved "https://registry.yarnpkg.com/@codegouvfr/react-dsfr/-/react-dsfr-1.7.2.tgz#c38a330333c9cdff60b20d8b1a7e0aebd89cd73d"
-  integrity sha512-4kZ1EajPQVelkneSzbn7EZbrVBdukWUBsy+RsHBXf9a+JRvgYS3xlf7jDmc70tuEHF/824pShue7kDvoR6uxnw==
+  version "1.7.4"
+  resolved "https://registry.yarnpkg.com/@codegouvfr/react-dsfr/-/react-dsfr-1.7.4.tgz#1053d49e9d57cae9459ce987fe692ea368145f80"
+  integrity sha512-H+6olVh1M7qj100YNRj2081I8UZZ612ekz5nD0iXcBckuJYptaToYg45OJYuPdBJwsHPH/4Gir0zrjbAdEqdRA==
   dependencies:
     tsafe "^1.6.3"
     yargs-parser "^21.1.1"
