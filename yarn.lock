@@ -571,9 +571,9 @@
     string-tokenizer "^0.0.8"
 
 "@inseefr/lunatic@^2.7.20":
-  version "2.7.20"
-  resolved "https://registry.yarnpkg.com/@inseefr/lunatic/-/lunatic-2.7.20.tgz#ddc9e971f3e30bac8d79d174d2bf296968e18718"
-  integrity sha512-txYpJTCz4szQJXB0mY3d+QN32Tw2hfpRGQzomjprNQl+Rfc6LNTzGMJ4WgU/aYZmLyFPgMPmz+j0T3bjaR3obA==
+  version "2.7.21"
+  resolved "https://registry.yarnpkg.com/@inseefr/lunatic/-/lunatic-2.7.21.tgz#164e8cd86de3cf8ade6f2a1a80df9e70a0e14e4d"
+  integrity sha512-ItyEWfqX4CJGBDY2e0SlpXSmUBvcyeWA9/DcNhHisB94iBYcNLjkuGZ1EwNGhg61ifOcp0wRsP0q+32NufqwkA==
   dependencies:
     "@inseefr/trevas" "^0.1.20"
     "@inseefr/vtl-2.0-antlr-tools" "^0.1.0"
