@@ -17,7 +17,7 @@
     "prebuild": "only-include-used-icons && npx @inseefr/lunatic"
   },
   "dependencies": {
-    "@codegouvfr/react-dsfr": "1.7.5-rc.0",
+    "@codegouvfr/react-dsfr": "1.9.2",
     "@emotion/react": "^11.11.3",
     "@inseefr/lunatic": "^2.7.20",
     "@inseefr/lunatic-dsfr": "^1.0.21",
