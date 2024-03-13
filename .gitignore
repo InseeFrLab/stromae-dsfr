@@ -24,3 +24,4 @@ public/workers/*
 *.sw?
 
 /public/dsfr/
+/public/nomenclatures/
