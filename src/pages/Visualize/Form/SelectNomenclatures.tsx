@@ -30,11 +30,14 @@ export function SelectNomenclatures() {
           return (
             <li key={item.id} style={{ display: 'flex', flexDirection: 'row' }}>
               <Input
-                {...register(`nomenclature.${index}.name`)}
+                nativeInputProps={{ ...register(`nomenclature.${index}.name`) }}
                 label="Nom"
                 className={fr.cx('fr-mr-4v')}
               />
-              <Input {...register(`nomenclature.${index}.uri`)} label="Uri" />
+              <Input
+                nativeInputProps={{ ...register(`nomenclature.${index}.uri`) }}
+                label="Uri"
+              />
               <Button
                 type="button"
                 iconId={'fr-icon-close-line'}
