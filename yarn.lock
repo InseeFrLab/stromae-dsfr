@@ -2304,9 +2304,9 @@ lru-queue@^0.1.0:
     es5-ext "~0.10.2"
 
 magic-string@^0.30.7:
-  version "0.30.7"
-  resolved "https://registry.yarnpkg.com/magic-string/-/magic-string-0.30.7.tgz#0cecd0527d473298679da95a2d7aeb8c64048505"
-  integrity sha512-8vBuFF/I/+OSLRmdf2wwFCJCz+nSn0m6DPvGH1fS/KiQoSaR+sETbov0eIk9KhEKy8CYqIkIAnbohxT/4H0kuA==
+  version "0.30.8"
+  resolved "https://registry.yarnpkg.com/magic-string/-/magic-string-0.30.8.tgz#14e8624246d2bedba70d5462aa99ac9681844613"
+  integrity sha512-ISQTe55T2ao7XtlAStud6qwYPZjE4GK1S/BeVPus4jrq6JuOnQ00YKQC581RWhR122W7msZV263KzVeLoqidyQ==
   dependencies:
     "@jridgewell/sourcemap-codec" "^1.4.15"
 
@@ -3475,9 +3475,9 @@ vinyl@0.3.2:
     lodash "^2.4.1"
 
 vite-envs@^4.0.10:
-  version "4.0.10"
-  resolved "https://registry.yarnpkg.com/vite-envs/-/vite-envs-4.0.10.tgz#3ccdb7663629e402011be7107b30d52ee0b6a316"
-  integrity sha512-oz/yvSxKnV5e3y5vlqeFfDW52yZqrwtuwrt2EjWZbVVFj/9RgD8YJ2rVU5WLHyqydr5UX4PG3ioOzI4lf1XBtg==
+  version "4.0.11"
+  resolved "https://registry.yarnpkg.com/vite-envs/-/vite-envs-4.0.11.tgz#ca949d241e3684e63d6069db48f61e50abe2f70b"
+  integrity sha512-vYNRJUgYQ5rnmV3aPwCgUkuR5diHLX+7mhOWyBgJwC24USDC+eLkPr+ERjPk4KKRGan/m+33AM3AWmS7ZzWgdQ==
   dependencies:
     cheerio "^1.0.0-rc.12"
     dotenv "^16.4.4"
