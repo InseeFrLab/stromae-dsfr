@@ -3964,9 +3964,9 @@ oidc-client-ts@2.4.0:
     jwt-decode "^3.1.2"
 
 oidc-spa@^4.4.1:
-  version "4.4.1"
-  resolved "https://registry.yarnpkg.com/oidc-spa/-/oidc-spa-4.4.1.tgz#f9390344bcf8c0c76167ae17fdbf88068d06295a"
-  integrity sha512-7sdYINxXZVgexS8iCJu3g/frgSiM0KEk44Pu31mc6+d9rBparalznWgYE7yMNX3GBgv1IeNOWw7gN5anudAMGg==
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/oidc-spa/-/oidc-spa-4.5.0.tgz#eab4643f80006ad6d0db906e646241f64c88c304"
+  integrity sha512-3E32oaOaL2/NfJWyg7vjHPOb1SRe3q9oJ5OMSDcuF9AVZYbfgrKeCTvQcQhkxlIDLfZ4zKVQYVm45ft8Wj5W7w==
   dependencies:
     jwt-decode "^3.1.2"
     oidc-client-ts "2.4.0"
