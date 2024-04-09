@@ -4145,9 +4145,9 @@ postcss@^8.4.38:
     source-map-js "^1.2.0"
 
 powerhooks@^1.0.9:
-  version "1.0.9"
-  resolved "https://registry.yarnpkg.com/powerhooks/-/powerhooks-1.0.9.tgz#a0835855b215999d2e03258a652500a012eee865"
-  integrity sha512-G2OWxB36sYPcz+KehB/6RJSE5DWPeWxpOgHZXJUCzyQ9AsSABwUNibrWVp7HwwNlIUpVpvKvQ1zpi8Fs6tyTxg==
+  version "1.0.10"
+  resolved "https://registry.yarnpkg.com/powerhooks/-/powerhooks-1.0.10.tgz#9d532b23294cba69d5872d859bdf843b91cb9c41"
+  integrity sha512-fJmKSVJk9Bkotl9rK1ryVPSqhY4xOZKxM6deyTaMbICK8jHh/CQztN2mNTxlKu6vkJBIFj1cRd/7N6slh3uM6w==
   dependencies:
     evt "^2.5.7"
     memoizee "^0.4.15"
