@@ -22,7 +22,7 @@
     "@codegouvfr/react-dsfr": "^1.9.8",
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
-    "@inseefr/lunatic": "3.0.0-rc.24",
+    "@inseefr/lunatic": "3.0.0-rc.29",
     "@inseefr/lunatic-dsfr": "2.0.0-rc.10",
     "@mui/material": "^5.15.15",
     "@tanstack/react-query": "^5.29.2",
