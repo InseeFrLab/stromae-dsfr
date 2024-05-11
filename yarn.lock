@@ -764,10 +764,10 @@
   dependencies:
     react-number-format "^5.3.4"
 
-"@inseefr/lunatic@3.0.0-rc.33":
-  version "3.0.0-rc.33"
-  resolved "https://registry.yarnpkg.com/@inseefr/lunatic/-/lunatic-3.0.0-rc.33.tgz#3f3393930a645589193048ab1e665e6d5b84ddf8"
-  integrity sha512-nj2T8jWSVo7dULuHNGfhJGMxMLP04AjF8a2hyHhL3vCSObquqk3ms0K9FwnS5PlVFaSBvhXs9wi3A5K1tI7tMw==
+"@inseefr/lunatic@3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@inseefr/lunatic/-/lunatic-3.0.0.tgz#e259a85076635b50eff7c237dc86afcb7f60af4f"
+  integrity sha512-yeOujy8aO8/mD/1aLGhz02Gp/b79HXRwzjf5dRkb2hT49XOCcVB/tyy3CmTw1P+gQIFGTRGOE0uToD49d1ZGyQ==
   dependencies:
     "@inseefr/trevas" "^0.1.21"
     "@inseefr/vtl-2.0-antlr-tools" "^0.3.2"
@@ -778,10 +778,10 @@
     react-error-boundary "^4.0.13"
     react-markdown "^9.0.1"
     react-number-format "^5.3.4"
-    react-tooltip "^5.26.3"
+    react-tooltip "^5.26.4"
     remark-breaks "^4.0.0"
     remark-emoji "^4.0.1"
-    sass "^1.75.0"
+    sass "^1.76.0"
 
 "@inseefr/trevas@^0.1.21":
   version "0.1.21"
@@ -4597,7 +4597,7 @@ react-simple-animate@^3.3.12:
   resolved "https://registry.yarnpkg.com/react-simple-animate/-/react-simple-animate-3.5.2.tgz#ab08865c8bd47872b92bd1e25902326bf7c695b3"
   integrity sha512-xLE65euP920QMTOmv5haPlml+hmOPDkbIr5WeF7ADIXWBYt5kW/vwpNfWg8EKMab8aeDxIZ6QjffVh8v2dUyhg==
 
-react-tooltip@^5.26.3:
+react-tooltip@^5.26.4:
   version "5.26.4"
   resolved "https://registry.yarnpkg.com/react-tooltip/-/react-tooltip-5.26.4.tgz#9e350f2a1c859201ccdc3b15d17e0a01e88c0a0f"
   integrity sha512-5WyDrsfw1+6qNVSr3IjqElqJ+cCwE8+44b+HpJ8qRLv7v0a3mcKf8wvv+NfgALFS6QpksGFqTLV2JQ60c+okZQ==
@@ -4801,10 +4801,10 @@ safe-stable-stringify@^1.1:
   resolved "https://registry.yarnpkg.com/safer-buffer/-/safer-buffer-2.1.2.tgz#44fa161b0187b9549dd84bb91802f9bd8385cd6a"
   integrity sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==
 
-sass@^1.75.0:
-  version "1.76.0"
-  resolved "https://registry.yarnpkg.com/sass/-/sass-1.76.0.tgz#fe15909500735ac154f0dc7386d656b62b03987d"
-  integrity sha512-nc3LeqvF2FNW5xGF1zxZifdW3ffIz5aBb7I7tSvOoNu7z1RQ6pFt9MBuiPtjgaI62YWrM/txjWlOCFiGtf2xpw==
+sass@^1.76.0:
+  version "1.77.1"
+  resolved "https://registry.yarnpkg.com/sass/-/sass-1.77.1.tgz#018cdfb206afd14724030c02e9fefd8f30a76cd0"
+  integrity sha512-OMEyfirt9XEfyvocduUIOlUSkWOXS/LAt6oblR/ISXCTukyavjex+zQNm51pPCOiFKY1QpWvEH1EeCkgyV3I6w==
   dependencies:
     chokidar ">=3.0.0 <4.0.0"
     immutable "^4.0.0"
