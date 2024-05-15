@@ -758,9 +758,9 @@
     validator "^13.11.0"
 
 "@inseefr/lunatic-dsfr@^2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@inseefr/lunatic-dsfr/-/lunatic-dsfr-2.0.0.tgz#26848db8641bfec879f0aca5cb9875ba6e03f9cc"
-  integrity sha512-onZ8UcsggLFznZauOrkt4VJjiJPMRAskAlKTEDpdffCr5qdOijcAjyaR9tvuZAa5zZC9GaRuHjllY+2zMDK7eA==
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@inseefr/lunatic-dsfr/-/lunatic-dsfr-2.0.1.tgz#50f2a07446a9b6ee34a966a9cb9ae26eae8515a6"
+  integrity sha512-Qmc8svu1Tn5T5CUtOrh9meoJwutqGdJQzHZfML04FMjG/sx1zrfibtXX6+KDFTrrB+rGCVhvMWSGg4IXVvA2+Q==
   dependencies:
     react-number-format "^5.3.4"
 
