@@ -1386,9 +1386,9 @@
     "@tanstack/query-core" "5.36.1"
 
 "@tanstack/react-router@^1.33.7":
-  version "1.33.7"
-  resolved "https://registry.yarnpkg.com/@tanstack/react-router/-/react-router-1.33.7.tgz#4826698a1f236bbc6a914ce3622f90fd018150d1"
-  integrity sha512-iBdGzAFtSDowWrOfNxiY3GFTb4zF0h1oAnmmv/4pIH0tD6m+9LZdgdwgc13rhMpTEt8XG+zMDzN8od7rXRQZEQ==
+  version "1.35.3"
+  resolved "https://registry.yarnpkg.com/@tanstack/react-router/-/react-router-1.35.3.tgz#96f98c1df74bd73d50db00e586012f22ffea56c6"
+  integrity sha512-9B4BAK/WzAa+xsc5LVkDgOcIIFQlfZv7xykg7VWW88PpiY0dQku4IxkUNY5vtQ4YkdJ9Z0QIt33tVnvVIFS4OQ==
   dependencies:
     "@tanstack/history" "1.31.16"
     "@tanstack/react-store" "^0.2.1"
@@ -5443,9 +5443,9 @@ use-deep-compare-effect@^1.8.1:
     dequal "^2.0.2"
 
 use-sync-external-store@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/use-sync-external-store/-/use-sync-external-store-1.2.0.tgz#7dbefd6ef3fe4e767a0cf5d7287aacfb5846928a"
-  integrity sha512-eEgnFxGQ1Ife9bzYs6VLi8/4X6CObHMw9Qr9tPY43iKwsPw8xE8+EFsf/2cFZ5S3esXgpWgtSCtLNS41F+sKPA==
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/use-sync-external-store/-/use-sync-external-store-1.2.2.tgz#c3b6390f3a30eba13200d2302dcdf1e7b57b2ef9"
+  integrity sha512-PElTlVMwpblvbNqQ82d2n6RjStvdSoNe9FG28kNfz3WiXilJm4DdNkEzRhCZuIDwY8U08WVihhGR5iRqAwfDiw==
 
 utility-types@^3.10.0:
   version "3.11.0"
