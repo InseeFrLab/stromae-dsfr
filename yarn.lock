@@ -3235,6 +3235,14 @@ human-signals@^2.1.0:
   resolved "https://registry.yarnpkg.com/human-signals/-/human-signals-2.1.0.tgz#dc91fcba42e4d06e4abaed33b3e7a3c02f514ea0"
   integrity sha512-B4FFZ6q/T2jhhksgkbEW3HBvWIfDW85snkQgawt07S7J5QXTk6BkNV+0yAeZrM5QpMAdYlocGoljn0sJ/WQkFw==
 
+i18nifty@^3.2.1:
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/i18nifty/-/i18nifty-3.2.1.tgz#ee27e76cfdb8591d26ac980063567fac75a19c11"
+  integrity sha512-/exQ7rch7erPczJVy8gL+BD7TT24FfLFUvpLV1QW23tDB+tatq4/BN6j2V6nvADtn5GCFkhmWBe8ZzavDjQ3fQ==
+  dependencies:
+    powerhooks "^1.0.9"
+    tsafe "^1.6.5"
+
 iconv-lite@0.6.3:
   version "0.6.3"
   resolved "https://registry.yarnpkg.com/iconv-lite/-/iconv-lite-0.6.3.tgz#a52f80bf38da1952eb5c681790719871a1a72501"
@@ -4546,6 +4554,15 @@ powerhooks@^1.0.10:
     memoizee "^0.4.15"
     tsafe "^1.6.6"
 
+powerhooks@^1.0.9:
+  version "1.0.11"
+  resolved "https://registry.yarnpkg.com/powerhooks/-/powerhooks-1.0.11.tgz#52f6d4d3475488e84951e91f2e333d5384805306"
+  integrity sha512-xgVQM7KBBCaHUp7miDIecytMZvyOSOaOQ8u7rVGuTNMI4uwbpAtkU1xrxPAVThWgOInQTlWRC1eCljKnDbMi8g==
+  dependencies:
+    evt "^2.5.7"
+    memoizee "^0.4.15"
+    tsafe "^1.7.2"
+
 prelude-ls@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/prelude-ls/-/prelude-ls-1.2.1.tgz#debc6489d7a6e6b0e7611888cec880337d316396"
@@ -5222,6 +5239,11 @@ tsafe@^1.6.3, tsafe@^1.6.5, tsafe@^1.6.6:
   version "1.6.6"
   resolved "https://registry.yarnpkg.com/tsafe/-/tsafe-1.6.6.tgz#fd93e64d6eb13ef83ed1650669cc24bad4f5df9f"
   integrity sha512-gzkapsdbMNwBnTIjgO758GujLCj031IgHK/PKr2mrmkCSJMhSOR5FeOuSxKLMUoYc0vAA4RGEYYbjt/v6afD3g==
+
+tsafe@^1.7.2:
+  version "1.7.2"
+  resolved "https://registry.yarnpkg.com/tsafe/-/tsafe-1.7.2.tgz#0f63d414876287ad01b135f832722f93e22da374"
+  integrity sha512-dAPfQLhCfCRre5qs+Z5Q2a7s2CV7RxffZUmvj7puGaePYjECzWREJFd3w4XSFe/T5tbxgowfItA/JSSZ6Ma3dA==
 
 tsconfck@^2.0.1:
   version "2.1.2"

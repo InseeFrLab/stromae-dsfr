@@ -1,4 +1,6 @@
 import { createModal } from '@codegouvfr/react-dsfr/Modal'
+import { useTranslation } from 'i18n'
+import { declareComponentKeys } from 'i18nifty'
 import { useEffect, useId, useState, type MutableRefObject } from 'react'
 import { assert } from 'tsafe/assert'
 
@@ -10,6 +12,7 @@ export type Props = {
 export function ValidationModal({ actionsRef }: Props) {
   const id = useId()
 
+  const { t } = useTranslation('ValidationModal')
   const [modal] = useState(() =>
     createModal({
       id: `validationModal-${id}`,
@@ -35,15 +38,15 @@ export function ValidationModal({ actionsRef }: Props) {
 
   return (
     <modal.Component
-      title="Voulez vous envoyer vos réponses"
+      title={t('title')}
       buttons={[
         {
           doClosesModal: true, //Default true, clicking a button close the modal.
-          children: 'Annuler',
+          children: t('button cancel'),
         },
         {
           doClosesModal: true,
-          children: 'Envoyer mes réponses',
+          children: t('button validate'),
           onClick: () => {
             assert(openState !== undefined)
             openState.resolve()
@@ -53,8 +56,12 @@ export function ValidationModal({ actionsRef }: Props) {
       ]}
       concealingBackdrop={true}
     >
-      Vous êtes sur le point d'envoyer vos réponses au questionnaire. Après
-      envoi, vous ne pourrez plus modifier vos réponses.
+      {t('content')}
     </modal.Component>
   )
 }
+const { i18n } = declareComponentKeys<
+  'title' | 'button cancel' | 'button validate' | 'content'
+>()('ValidationModal')
+
+export type I18n = typeof i18n

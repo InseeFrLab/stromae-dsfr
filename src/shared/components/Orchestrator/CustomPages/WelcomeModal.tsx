@@ -1,10 +1,12 @@
 import { createModal } from '@codegouvfr/react-dsfr/Modal'
+import { useTranslation } from 'i18n'
+import { declareComponentKeys } from 'i18nifty'
 import { useId, useState } from 'react'
 
 export function WelcomeModal(props: { goBack: () => void }) {
   const { goBack } = props
   const id = useId()
-
+  const { t } = useTranslation('WelcomeModal')
   const [modal] = useState(() =>
     createModal({
       id: `welcomeModal-${id}`,
@@ -13,22 +15,27 @@ export function WelcomeModal(props: { goBack: () => void }) {
   )
   return (
     <modal.Component
-      title="Bienvenue"
+      title={t('title')}
       buttons={[
         {
           doClosesModal: true, //Default true, clicking a button close the modal.
-          children: 'Revenir à la première page',
+          children: t('button first page'),
         },
         {
           doClosesModal: true,
-          children: "Reprendre là où j'en étais",
+          children: t('button go back'),
           onClick: goBack,
         },
       ]}
       concealingBackdrop={true}
     >
-      Vous avez déjà commencé à renseigner le questionnaire. Souhaitez-vous
-      reprendre là où vous en étiez ou revenir à la première page ?
+      {t('content')}
     </modal.Component>
   )
 }
+
+const { i18n } = declareComponentKeys<
+  'title' | 'button first page' | 'button go back' | 'content'
+>()('WelcomeModal')
+
+export type I18n = typeof i18n

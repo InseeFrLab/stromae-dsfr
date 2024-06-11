@@ -1,18 +1,15 @@
 import { fr } from '@codegouvfr/react-dsfr'
 import Button from '@codegouvfr/react-dsfr/Button'
+import { useTranslation } from 'i18n'
+import { declareComponentKeys } from 'i18nifty'
 import type { InternalPageType } from 'model/Page'
-import {
-  useMemo,
-  useState,
-  type PropsWithChildren,
-  type ReactNode,
-} from 'react'
+import { useState, type PropsWithChildren, type ReactNode } from 'react'
 import { useStyles } from 'tss-react'
 import type { OrchestratorProps } from './Orchestrator'
 import { SequenceHeader } from './SequenceHeader'
 import type { LunaticOverview } from './utils/lunaticType'
 
-export function Layout(
+export function SurveyContainer(
   props: PropsWithChildren<{
     currentPage: InternalPageType
     handlePreviousClick: () => void
@@ -23,7 +20,7 @@ export function Layout(
     pagination: 'question' | 'sequence'
     overview: LunaticOverview
     isSequencePage: boolean
-    bottomLayout: ReactNode
+    bottomContent: ReactNode
   }>
 ) {
   const {
@@ -37,23 +34,12 @@ export function Layout(
     pagination,
     overview,
     isSequencePage,
-    bottomLayout,
+    bottomContent,
   } = props
 
   const { cx } = useStyles()
 
-  const nextLabel = useMemo(() => {
-    switch (currentPage) {
-      case 'welcomePage':
-        return 'Commencer'
-      case 'lunaticPage':
-        return 'Continuer'
-      case 'endPage':
-        return "Télécharger l'accusé de réception"
-      case 'validationPage':
-        return 'Envoyer mes réponses'
-    }
-  }, [currentPage])
+  const { t } = useTranslation('SurveyContainer')
 
   const isPreviousButtonDisplayed = ['welcomePage', 'endPage'].includes(
     currentPage
@@ -73,13 +59,13 @@ export function Layout(
             )}
             <Button
               id="button-precedent"
-              title="Revenir à l'étape précédente"
+              title={t('button previous title')}
               priority="tertiary no outline"
               iconId="fr-icon-arrow-left-line"
               onClick={handlePreviousClick}
               disabled={isPreviousButtonDisplayed}
             >
-              Précédent
+              {t('button previous label')}
             </Button>
           </div>
         </div>
@@ -104,14 +90,14 @@ export function Layout(
                   }
                   priority="tertiary"
                   onClick={() => setIsLayoutExpanded((expanded) => !expanded)}
-                  title="Étendre la vue"
+                  title={t('button expand')}
                 />
               </div>
             )}
             {children}
             <Button
               priority="primary"
-              title={"Passer à l'étape suivante"}
+              title={t('button continue title')}
               id="continue-button"
               onClick={
                 currentPage === 'endPage'
@@ -119,19 +105,17 @@ export function Layout(
                   : handleNextClick
               }
             >
-              {nextLabel}
+              {t('button continue label', { currentPage })}
             </Button>
-            {bottomLayout}
+            {bottomContent}
             {mode === 'visualize' && (
               <div style={{ justifyContent: 'flex-end', textAlign: 'right' }}>
                 <Button
                   iconId="ri-download-2-line"
                   priority="tertiary no outline"
                   onClick={handleDownloadData}
-                  title="Télécharger les données"
-                >
-                  Télécharger les données
-                </Button>
+                  title={t('button download')}
+                />
               </div>
             )}
           </div>
@@ -140,3 +124,18 @@ export function Layout(
     </>
   )
 }
+
+const { i18n } = declareComponentKeys<
+  | 'button previous title'
+  | 'button previous label'
+  | 'button expand'
+  | 'button continue title'
+  | {
+      K: 'button continue label'
+      P: { currentPage: InternalPageType }
+      R: string
+    }
+  | 'button download'
+>()('SurveyContainer')
+
+export type I18n = typeof i18n

@@ -1,4 +1,6 @@
 import { fr } from '@codegouvfr/react-dsfr'
+import { useTranslation } from 'i18n'
+import { declareComponentKeys } from 'i18nifty'
 import type { LunaticOverview } from './utils/lunaticType'
 
 type SequenceHeaderProps = {
@@ -9,6 +11,7 @@ type SequenceHeaderProps = {
 export function SequenceHeader(props: SequenceHeaderProps) {
   const { overview, pagination } = props
 
+  const { t } = useTranslation('SequenceHeader')
   const currentSequenceIndex = overview.findIndex(
     (sequence) => sequence.current
   )
@@ -32,7 +35,7 @@ export function SequenceHeader(props: SequenceHeaderProps) {
       <h2 className={fr.cx('fr-stepper__title')}>{currentSequence.label}</h2>
       <p>{currentSequence.description}</p>
       <span className={fr.cx('fr-stepper__state')}>
-        Étape {currentStep} sur {stepCount}
+        {t('stepper state', { currentStep, stepCount })}
       </span>
       <div
         className={fr.cx('fr-stepper__steps')}
@@ -42,3 +45,11 @@ export function SequenceHeader(props: SequenceHeaderProps) {
     </div>
   )
 }
+
+const { i18n } = declareComponentKeys<{
+  K: 'stepper state'
+  P: { currentStep: number; stepCount: number }
+  R: string
+}>()('SequenceHeader')
+
+export type I18n = typeof i18n

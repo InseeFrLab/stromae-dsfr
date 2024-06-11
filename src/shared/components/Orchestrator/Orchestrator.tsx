@@ -16,10 +16,10 @@ import { isObjectEmpty } from 'utils/isObjectEmpty'
 import { useRefSync } from 'utils/useRefSync'
 import { useUpdateEffect } from 'utils/useUpdateEffect'
 import { EndPage } from './CustomPages/EndPage'
-import { Validation } from './CustomPages/Validation'
 import { ValidationModal } from './CustomPages/ValidationModal'
-import { Welcome } from './CustomPages/Welcome'
-import { Layout } from './Layout'
+import { ValidationPage } from './CustomPages/ValidationPage'
+import { WelcomePage } from './CustomPages/WelcomePage'
+import { SurveyContainer } from './SurveyContainer'
 import { slotComponents } from './slotComponents'
 import { useStromaeNavigation } from './useStromaeNavigation'
 import { isBlockingError, isSameErrors } from './utils/controls'
@@ -30,6 +30,9 @@ import type {
 import { scrollAndFocusToFirstError } from './utils/scrollAndFocusToFirstError'
 import { isSequencePage } from './utils/sequence'
 
+/**
+ * Module augmentation to specify that Lunatic Component can have an additional props position
+ */
 declare module '@inseefr/lunatic' {
   interface LunaticExtraProps {
     position: 'bottom' | undefined
@@ -70,7 +73,7 @@ export function Orchestrator(props: OrchestratorProps) {
 
   const {
     getComponents,
-    Provider,
+    Provider: LunaticProvider,
     compileControls,
     goPreviousPage: goPrevLunatic,
     goNextPage: goNextLunatic,
@@ -237,9 +240,9 @@ export function Orchestrator(props: OrchestratorProps) {
 
   return (
     <div className={fr.cx('fr-container--fluid')}>
-      <Provider>
+      <LunaticProvider>
         <div>
-          <Layout
+          <SurveyContainer
             handleNextClick={goNext}
             handlePreviousClick={goPrevious}
             handleDownloadData={downloadAsJsonRef.current}
@@ -249,7 +252,7 @@ export function Orchestrator(props: OrchestratorProps) {
             pagination={pagination}
             overview={overview}
             isSequencePage={isSequencePage(components)}
-            bottomLayout={
+            bottomContent={
               <div className={fr.cx('fr-my-10v')}>
                 {currentPage === 'lunaticPage' && (
                   <LunaticComponents
@@ -265,7 +268,7 @@ export function Orchestrator(props: OrchestratorProps) {
           >
             <div className={fr.cx('fr-mb-4v')}>
               {currentPage === 'welcomePage' && (
-                <Welcome
+                <WelcomePage
                   initialCurrentPage={initialCurrentPage}
                   goToPage={goToPage}
                 />
@@ -280,15 +283,15 @@ export function Orchestrator(props: OrchestratorProps) {
                   })}
                 />
               )}
-              {currentPage === 'validationPage' && <Validation />}
+              {currentPage === 'validationPage' && <ValidationPage />}
               {currentPage === 'endPage' && (
                 <EndPage date={surveyUnitData?.stateData?.date} />
               )}
               <ValidationModal actionsRef={validationModalActionsRef} />
             </div>
-          </Layout>
+          </SurveyContainer>
         </div>
-      </Provider>
+      </LunaticProvider>
     </div>
   )
 }

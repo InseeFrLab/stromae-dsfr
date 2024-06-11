@@ -1,15 +1,18 @@
 import { fr } from '@codegouvfr/react-dsfr'
+import { useTranslation } from 'i18n'
+import { declareComponentKeys } from 'i18nifty'
 import type { PageType } from 'model/Page'
 import { useEffect } from 'react'
 import type { useStromaeNavigation } from '../useStromaeNavigation'
 import { WelcomeModal } from './WelcomeModal'
 
-export function Welcome(props: {
+export function WelcomePage(props: {
   initialCurrentPage: PageType | undefined
   goToPage: ReturnType<typeof useStromaeNavigation>['goToPage']
 }) {
   const { initialCurrentPage, goToPage } = props
 
+  const { t } = useTranslation('WelcomePage')
   useEffect(() => {
     // Reset the scroll on component unmount
     return () => {
@@ -20,11 +23,9 @@ export function Welcome(props: {
   return (
     <>
       <div className={fr.cx('fr-my-4w')}>
-        <h1>Bienvenue sur le questionnaire de votre enquête</h1>
-        <p className={fr.cx('fr-text--lead')}>
-          Cette enquête permet de connaître plus d'informations sur le domaine
-          concerné
-        </p>
+        <h1>{t('title')}</h1>
+        <p className={fr.cx('fr-text--lead')}>{t('paragraph')}</p>
+        {/* Not internationalized yet because must cames from metadata from backend */}
         <h2>Qui doit répondre à ce questionnaire ?</h2>
         <ul>
           <li>Alice Doe</li>
@@ -38,3 +39,7 @@ export function Welcome(props: {
     </>
   )
 }
+
+const { i18n } = declareComponentKeys<'title' | 'paragraph'>()('WelcomePage')
+
+export type I18n = typeof i18n

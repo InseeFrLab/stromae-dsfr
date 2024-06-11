@@ -29,6 +29,7 @@
     "@tanstack/react-query": "^5.37.1",
     "@tanstack/react-router": "^1.33.7",
     "axios": "^1.7.2",
+    "i18nifty": "^3.2.1",
     "oidc-spa": "^4.6.1",
     "powerhooks": "^1.0.10",
     "react": "^18.3.1",

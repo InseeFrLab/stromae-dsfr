@@ -12,8 +12,9 @@ import { visualizeRoute } from 'pages/Visualize/route'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { ErrorComponent } from 'shared/components/Error/ErrorComponent'
+import { Footer } from 'shared/components/Layout/Footer'
+import { Header } from 'shared/components/Layout/Header'
 import { NotFoundError } from 'shared/error/notFoundError'
-import { Layout } from './Layout'
 
 export const rootRoute = createRootRouteWithContext<{
   queryClient: QueryClient
@@ -28,8 +29,11 @@ export const rootRoute = createRootRouteWithContext<{
 function RootComponent() {
   const { isDark } = useIsDark()
   return (
-    <Layout>
-      <main id="main">
+    <div
+      style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}
+    >
+      <Header />
+      <main id="main" role="main">
         <ToastContainer
           position="top-right"
           theme={isDark ? 'dark' : 'light'}
@@ -37,7 +41,8 @@ function RootComponent() {
         />
         <Outlet />
       </main>
-    </Layout>
+      <Footer />
+    </div>
   )
 }
 
