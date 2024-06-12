@@ -1,10 +1,9 @@
 import { fr } from '@codegouvfr/react-dsfr'
-import { useTranslation } from 'i18n'
-import { declareComponentKeys } from 'i18nifty'
+import { declareComponentKeys, useTranslation } from 'i18n'
 
 export function EndPage(props: { date: number | undefined }) {
   const { date = Date.now() } = props
-  const { t } = useTranslation('EndPage')
+  const { t } = useTranslation({ EndPage })
   const formatedDate = new Date(date).toLocaleString()
 
   return (
@@ -22,6 +21,6 @@ const { i18n } = declareComponentKeys<
       P: { formatedDate: string }
       R: string
     }
->()('EndPage')
+>()({ EndPage })
 
 export type I18n = typeof i18n

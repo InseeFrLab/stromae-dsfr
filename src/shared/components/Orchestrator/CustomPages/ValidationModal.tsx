@@ -1,6 +1,5 @@
 import { createModal } from '@codegouvfr/react-dsfr/Modal'
-import { useTranslation } from 'i18n'
-import { declareComponentKeys } from 'i18nifty'
+import { declareComponentKeys, useTranslation } from 'i18n'
 import { useEffect, useId, useState, type MutableRefObject } from 'react'
 import { assert } from 'tsafe/assert'
 
@@ -12,7 +11,7 @@ export type Props = {
 export function ValidationModal({ actionsRef }: Props) {
   const id = useId()
 
-  const { t } = useTranslation('ValidationModal')
+  const { t } = useTranslation({ ValidationModal })
   const [modal] = useState(() =>
     createModal({
       id: `validationModal-${id}`,
@@ -62,6 +61,6 @@ export function ValidationModal({ actionsRef }: Props) {
 }
 const { i18n } = declareComponentKeys<
   'title' | 'button cancel' | 'button validate' | 'content'
->()('ValidationModal')
+>()({ ValidationModal })
 
 export type I18n = typeof i18n

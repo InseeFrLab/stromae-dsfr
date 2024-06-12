@@ -1,6 +1,5 @@
 import { fr } from '@codegouvfr/react-dsfr'
-import { useTranslation } from 'i18n'
-import { declareComponentKeys } from 'i18nifty'
+import { declareComponentKeys, useTranslation } from 'i18n'
 import type { LunaticOverview } from './utils/lunaticType'
 
 type SequenceHeaderProps = {
@@ -50,6 +49,6 @@ const { i18n } = declareComponentKeys<{
   K: 'stepper state'
   P: { currentStep: number; stepCount: number }
   R: string
-}>()('SequenceHeader')
+}>()({ SequenceHeader })
 
 export type I18n = typeof i18n

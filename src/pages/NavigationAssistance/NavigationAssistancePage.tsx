@@ -1,32 +1,28 @@
 import Breadcrumb from '@codegouvfr/react-dsfr/Breadcrumb'
+import { declareComponentKeys, useTranslation } from 'i18n'
+import type { ReactNode } from 'react'
 import { Grid } from 'shared/components/Grid'
 
 export function NavigationAssistancePage() {
+  const { t } = useTranslation({ NavigationAssistancePage })
   return (
     <Grid>
       <Breadcrumb
-        currentPageLabel="Aide à la navigation"
+        currentPageLabel={t('navigation assistance title')}
         homeLinkProps={{
           to: '/',
         }}
         segments={[]}
       />
-      <h2>Aide à la navigation</h2>
-      <p>
-        Les boutons « Précédent » et « Continuer » vous permettent de naviguer
-        dans le questionnaire.
-      </p>
-      <p>
-        Vos réponses sont enregistrées à chaque fois que vous changez de page
-        mais ne sont pas transmises. Tant que vous ne l'avez pas transmis, vous
-        pouvez revenir sur le questionnaire à tout moment, pour le compléter ou
-        le finaliser.
-      </p>
-      <p>
-        Le bouton « Envoyer mes réponses », accessible à la fin du
-        questionnaire, vous permet de transmettre votre questionnaire renseigné
-        à nos services et de télécharger votre accusé de réception.
-      </p>
+      <h2>{t('navigation assistance title')}</h2>
+      {t('navigation assistance content')}
     </Grid>
   )
 }
+
+const { i18n } = declareComponentKeys<
+  | 'navigation assistance title'
+  | { K: 'navigation assistance content'; R: ReactNode }
+>()({ NavigationAssistancePage })
+
+export type I18n = typeof i18n

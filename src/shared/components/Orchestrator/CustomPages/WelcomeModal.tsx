@@ -1,12 +1,11 @@
 import { createModal } from '@codegouvfr/react-dsfr/Modal'
-import { useTranslation } from 'i18n'
-import { declareComponentKeys } from 'i18nifty'
+import { declareComponentKeys, useTranslation } from 'i18n'
 import { useId, useState } from 'react'
 
 export function WelcomeModal(props: { goBack: () => void }) {
   const { goBack } = props
   const id = useId()
-  const { t } = useTranslation('WelcomeModal')
+  const { t } = useTranslation({ WelcomeModal })
   const [modal] = useState(() =>
     createModal({
       id: `welcomeModal-${id}`,
@@ -36,6 +35,6 @@ export function WelcomeModal(props: { goBack: () => void }) {
 
 const { i18n } = declareComponentKeys<
   'title' | 'button first page' | 'button go back' | 'content'
->()('WelcomeModal')
+>()({ WelcomeModal })
 
 export type I18n = typeof i18n

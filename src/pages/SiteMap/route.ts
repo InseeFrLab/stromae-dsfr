@@ -8,7 +8,6 @@ export const siteMapRoute = createRoute({
   path: siteMapPath,
   component: SiteMapPage,
   loader: () => {
-    //TODO get name (Filière d'Enquête) in metadata
     document.title = "Plan du site | Filière d'Enquête"
   },
 })

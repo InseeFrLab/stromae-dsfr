@@ -2,13 +2,25 @@ import { fr } from '@codegouvfr/react-dsfr'
 import { Footer as DSFRFooter } from '@codegouvfr/react-dsfr/Footer'
 import logoInsee from 'assets/logo-insee.png'
 import { declareComponentKeys, useTranslation } from 'i18n'
+import { NavigationAssistancePage } from 'pages/NavigationAssistance/NavigationAssistancePage'
+import { SecurityPage } from 'pages/Security/SecurityPage'
 
 export function Footer() {
-  const { t } = useTranslation('Footer')
+  const { t } = useTranslation({
+    Footer,
+  })
+  const { t: t_NavigationAssistancePage } = useTranslation({
+    NavigationAssistancePage,
+  })
+
+  const { t: t_SecurityPage } = useTranslation({
+    SecurityPage,
+  })
+
   return (
     <DSFRFooter
       accessibility="partially compliant"
-      contentDescription={t('content description')}
+      contentDescription={t('footer content description')}
       license={t('license')}
       websiteMapLinkProps={{
         to: '/plan-du-site',
@@ -20,19 +32,19 @@ export function Footer() {
         to: '/mentions-legales',
       }}
       operatorLogo={{
-        alt: t('operator logo alt'),
+        alt: t('footer operator logo alt'),
         imgUrl: logoInsee,
         orientation: 'vertical',
       }}
       bottomItems={[
         {
-          text: 'Sécurité',
+          text: t_SecurityPage('security title'),
           linkProps: {
             to: '/securite',
           },
         },
         {
-          text: 'Aide à la navigation',
+          text: t_NavigationAssistancePage('navigation assistance title'),
           linkProps: {
             to: '/aide-a-la-navigation',
           },
@@ -47,7 +59,9 @@ export function Footer() {
 }
 
 const { i18n } = declareComponentKeys<
-  'content description' | 'operator logo alt' | { K: 'license'; R: JSX.Element }
->()('Footer')
+  | 'footer content description'
+  | 'footer operator logo alt'
+  | { K: 'license'; R: JSX.Element }
+>()({ Footer })
 
 export type I18n = typeof i18n

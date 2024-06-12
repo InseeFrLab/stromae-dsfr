@@ -1,7 +1,6 @@
 import { fr } from '@codegouvfr/react-dsfr'
 import Button from '@codegouvfr/react-dsfr/Button'
-import { useTranslation } from 'i18n'
-import { declareComponentKeys } from 'i18nifty'
+import { declareComponentKeys, useTranslation } from 'i18n'
 import type { InternalPageType } from 'model/Page'
 import { useState, type PropsWithChildren, type ReactNode } from 'react'
 import { useStyles } from 'tss-react'
@@ -39,7 +38,7 @@ export function SurveyContainer(
 
   const { cx } = useStyles()
 
-  const { t } = useTranslation('SurveyContainer')
+  const { t } = useTranslation({ SurveyContainer })
 
   const isPreviousButtonDisplayed = ['welcomePage', 'endPage'].includes(
     currentPage
@@ -136,6 +135,6 @@ const { i18n } = declareComponentKeys<
       R: string
     }
   | 'button download'
->()('SurveyContainer')
+>()({ SurveyContainer })
 
 export type I18n = typeof i18n

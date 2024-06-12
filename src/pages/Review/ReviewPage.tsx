@@ -1,3 +1,4 @@
+import { declareComponentKeys } from 'i18n'
 import { reviewRoute } from './route'
 
 export function ReviewPage() {
@@ -9,3 +10,7 @@ export function ReviewPage() {
 
   return <>Review Page</>
 }
+
+const { i18n } = declareComponentKeys()({ ReviewPage })
+
+export type I18n = typeof i18n

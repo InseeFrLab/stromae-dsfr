@@ -19,5 +19,6 @@ export const {
   {
     en: () => import('./resources/en').then(({ translations }) => translations),
     fr: () => import('./resources/fr').then(({ translations }) => translations),
+    sq: () => import('./resources/sq').then(({ translations }) => translations),
   }
 )

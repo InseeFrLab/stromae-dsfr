@@ -1,11 +1,11 @@
 import type { GenericTranslations } from 'i18nifty'
 
 //List the languages you with to support
-export const languages = ['en', 'fr'] as const
+export const languages = ['en', 'fr', 'sq'] as const
 
 //If the user's browser language doesn't match any
 //of the languages above specify the language to fallback to:
-export const fallbackLanguage = 'en'
+export const fallbackLanguage = 'fr'
 
 export type Language = (typeof languages)[number]
 
@@ -21,6 +21,12 @@ export type ComponentKey =
   | import('shared/components/Orchestrator/SequenceHeader').I18n
   | import('shared/components/Orchestrator/SurveyContainer').I18n
   | import('pages/Accessibility/AccessibilityPage').I18n
+  | import('pages/Legals/LegalsPage').I18n
+  | import('pages/NavigationAssistance/NavigationAssistancePage').I18n
+  | import('pages/Security/SecurityPage').I18n
+  | import('pages/SiteMap/SiteMapPage').I18n
+  | import('pages/Visualize/Form/VisualizeForm').I18n
+  | import('pages/Visualize/Form/SelectNomenclatures').I18n
 
 export type Translations<L extends Language> = GenericTranslations<
   ComponentKey,

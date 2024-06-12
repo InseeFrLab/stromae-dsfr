@@ -1,6 +1,7 @@
 import { Button } from '@codegouvfr/react-dsfr/Button'
 import { Input } from '@codegouvfr/react-dsfr/Input'
 import { useNavigate } from '@tanstack/react-router'
+import { declareComponentKeys, useTranslation } from 'i18n'
 import { useEffect } from 'react'
 import { FormProvider, useForm } from 'react-hook-form'
 import { Container } from 'shared/components/Container'
@@ -27,6 +28,8 @@ export function VisualizeForm() {
     handleSubmit,
     formState: { errors },
   } = methods
+
+  const { t } = useTranslation({ VisualizeForm })
 
   const onSubmit = handleSubmit((values) => {
     const { data, metadata, nomenclature, source } = values
@@ -55,41 +58,56 @@ export function VisualizeForm() {
       <Grid>
         <FormProvider {...methods}>
           <form onSubmit={onSubmit}>
-            <h1>Prévisualisation d'enquête.</h1>
-            <h2>Fichier source de l'enquête.</h2>
+            <h1>{t('form title')}</h1>
+            <h2>{t('source file title')}</h2>
             <Input
               nativeInputProps={{
                 ...register('source', {
-                  required:
-                    'Vous devez au moins fournir un URI de fichier source',
+                  required: t('source file error'),
                 }),
               }}
-              hintText="une url valide"
-              label="Uri Source."
+              hintText={t('hint text')}
+              label={t('source label')}
               state={errors.source ? 'error' : 'default'}
               stateRelatedMessage={errors.source?.message}
             />
-            <h2>Fichier de métadonnées de l'enquête.</h2>
+            <h2>{t('metadata file title')}</h2>
             <Input
               nativeInputProps={{ ...register('metadata') }}
-              label="Uri metadata"
-              hintText="une url valide"
+              label={t('metadata label')}
+              hintText={t('hint text')}
               state="default"
-              stateRelatedMessage="Text de validation / d'explication de l'erreur"
+              stateRelatedMessage={t('state related message')}
             />
-            <h2>Fichier de données de l'enquête.</h2>
+            <h2>{t('data file title')}</h2>
             <Input
               nativeInputProps={{ ...register('data') }}
-              hintText="une url valide"
-              label="Uri Data."
+              hintText={t('hint text')}
+              label={t('data label')}
               state="default"
-              stateRelatedMessage="Text de validation / d'explication de l'erreur"
+              stateRelatedMessage={t('state related message')}
             />
             <SelectNomenclatures />
-            <Button type="submit">Visualiser le questionnaire</Button>
+            <Button type="submit">{t('submit button')}</Button>
           </form>
         </FormProvider>
       </Grid>
     </Container>
   )
 }
+
+const { i18n } = declareComponentKeys<
+  | 'form title'
+  | 'source file title'
+  | 'metadata file title'
+  | 'data file title'
+  | 'source file error'
+  | 'source label'
+  | 'metadata label'
+  | 'data label'
+  | 'hint text'
+  | 'state related message'
+  | 'submit button'
+>()({ VisualizeForm })
+
+export type I18n = typeof i18n

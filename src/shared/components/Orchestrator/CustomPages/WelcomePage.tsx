@@ -1,6 +1,5 @@
 import { fr } from '@codegouvfr/react-dsfr'
-import { useTranslation } from 'i18n'
-import { declareComponentKeys } from 'i18nifty'
+import { declareComponentKeys, useTranslation } from 'i18n'
 import type { PageType } from 'model/Page'
 import { useEffect } from 'react'
 import type { useStromaeNavigation } from '../useStromaeNavigation'
@@ -12,7 +11,7 @@ export function WelcomePage(props: {
 }) {
   const { initialCurrentPage, goToPage } = props
 
-  const { t } = useTranslation('WelcomePage')
+  const { t } = useTranslation({ WelcomePage })
   useEffect(() => {
     // Reset the scroll on component unmount
     return () => {
@@ -40,6 +39,6 @@ export function WelcomePage(props: {
   )
 }
 
-const { i18n } = declareComponentKeys<'title' | 'paragraph'>()('WelcomePage')
+const { i18n } = declareComponentKeys<'title' | 'paragraph'>()({ WelcomePage })
 
 export type I18n = typeof i18n

@@ -1,15 +1,21 @@
 import Breadcrumb from '@codegouvfr/react-dsfr/Breadcrumb'
+import { declareComponentKeys, useTranslation } from 'i18n'
 import { Grid } from 'shared/components/Grid'
 
 export function SecurityPage() {
+  const { t } = useTranslation({ SecurityPage })
   return (
     <Grid>
       <Breadcrumb
-        currentPageLabel="Sécurité"
+        currentPageLabel={t('security title')}
         homeLinkProps={{}}
         segments={[]}
       />
-      <h2>Sécurité</h2>
+      <h2>{t('security title')}</h2>
     </Grid>
   )
 }
+
+const { i18n } = declareComponentKeys<'security title'>()('SecurityPage')
+
+export type I18n = typeof i18n

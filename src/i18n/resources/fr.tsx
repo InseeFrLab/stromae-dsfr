@@ -1,10 +1,10 @@
 import Badge from '@codegouvfr/react-dsfr/Badge'
-import type { Translations } from '../types'
+import type { Translations } from 'i18n/types'
 
 export const translations: Translations<'fr'> = {
   Footer: {
-    'operator logo alt': 'Insee, mesurer pour comprendre',
-    'content description': `
+    'footer operator logo alt': 'Insee, mesurer pour comprendre',
+    'footer content description': `
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
     incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
     quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
@@ -51,7 +51,7 @@ export const translations: Translations<'fr'> = {
     'operator logo alt': 'Insee, mesurer pour comprendre',
   },
   ErrorComponent: {
-    'button redirect to': ({ redirectTo }) => {
+    'error button redirect to': ({ redirectTo }) => {
       switch (redirectTo) {
         case 'portal':
           return 'Retourner sur le portail'
@@ -114,5 +114,94 @@ export const translations: Translations<'fr'> = {
     'button expand': 'Étendre la vue',
     'button previous title': "Revenir à l'étape précédente",
     'button previous label': 'Précédent',
+  },
+  AccessibilityPage: {
+    'accessibility title': 'Accessibilité',
+  },
+  LegalsPage: {
+    'legals title': 'Mentions légales',
+    'legals content': (
+      <>
+        <h3>Copyright</h3>
+        <p>
+          Toute reproduction pour un usage autre que strictement privé des
+          marques et logos affichés sur le présent site est rigoureusement
+          interdite.
+        </p>
+
+        <h3>Informations éditeurs</h3>
+        <p>
+          Institut National de la Statistique et des Études Économiques CS 70058
+        </p>
+
+        <p>88 avenue Verdier</p>
+        <p> 92541 MONTROUGE CEDEX FRANCE</p>
+        <p>Tél. : 01 87 69 50 00</p>
+        <p>
+          Conformément à la réglementation, la déclaration nécessaire a été
+          effectuée auprès de la Commission nationale de l'informatique et des
+          libertés.
+        </p>
+
+        <h3>Données nominatives</h3>
+        <p>
+          <a href="https://www.insee.fr/fr/information/3719162">
+            Données à caractère personnel
+          </a>
+        </p>
+      </>
+    ),
+  },
+  NavigationAssistancePage: {
+    'navigation assistance title': 'Aide à la navigation',
+    'navigation assistance content': (
+      <>
+        <p>
+          Les boutons « Précédent » et « Continuer » vous permettent de naviguer
+          dans le questionnaire.
+        </p>
+        <p>
+          Vos réponses sont enregistrées à chaque fois que vous changez de page
+          mais ne sont pas transmises. Tant que vous ne l'avez pas transmis,
+          vous pouvez revenir sur le questionnaire à tout moment, pour le
+          compléter ou le finaliser.
+        </p>
+        <p>
+          Le bouton « Envoyer mes réponses », accessible à la fin du
+          questionnaire, vous permet de transmettre votre questionnaire
+          renseigné à nos services et de télécharger votre accusé de réception.
+        </p>
+      </>
+    ),
+  },
+  SecurityPage: {
+    'security title': 'Sécurité',
+  },
+  SiteMapPage: {
+    'sitemap title': 'Plan du site',
+  },
+  VisualizeForm: {
+    'form title': "Prévisualisation d'enquête.",
+    'source file title': "Fichier source de l'enquête.",
+    'metadata file title': "Fichier de métadonnées de l'enquête.",
+    'data file title': "Fichier de données de l'enquête.",
+    'source file error': 'Vous devez au moins fournir un URI de fichier source',
+    'source label': 'Uri Source.',
+    'metadata label': 'Uri metadata',
+    'data label': 'Uri Data.',
+    'hint text': 'une url valide',
+    'state related message': "Text de validation / d'explication de l'erreur",
+    'submit button': 'Visualiser le questionnaire',
+  },
+  SelectNomenclatures: {
+    'nomenclatures title': 'Référentiels de suggestion.',
+    'nomenclatures description': `
+      Ajouter de nouveaux référentiels de suggestion. Pour être utilisés, ils
+      devront aussi figurer dans la section suggesters du fichier source.
+    `,
+    'add nomenclature button': 'Ajouter un nouveau référentiel',
+    'name label': 'Nom',
+    'uri label': 'Uri',
+    'delete button title': 'Supprimer',
   },
 }

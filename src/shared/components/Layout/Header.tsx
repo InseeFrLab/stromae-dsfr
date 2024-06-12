@@ -1,4 +1,3 @@
-import { Badge } from '@codegouvfr/react-dsfr/Badge'
 import { headerFooterDisplayItem } from '@codegouvfr/react-dsfr/Display'
 import { Header as DsfrHeader } from '@codegouvfr/react-dsfr/Header'
 import { useMatchRoute, useSearch } from '@tanstack/react-router'
@@ -9,7 +8,7 @@ import { collectPath } from 'pages/Collect/route'
 import { executePreLogoutActions } from 'shared/hooks/prelogout'
 
 export function Header() {
-  const { t } = useTranslation('Header')
+  const { t } = useTranslation({ Header })
   const { isUserLoggedIn, logout } = useOidc()
 
   /**
@@ -63,15 +62,8 @@ export function Header() {
               } as const,
             ]),
       ]}
-      serviceTagline="Application de collecte internet"
-      serviceTitle={
-        <>
-          Filière d'enquête{' '}
-          <Badge as="span" noIcon severity="success">
-            Beta
-          </Badge>
-        </>
-      }
+      serviceTagline={t('service tag line')}
+      serviceTitle={t('service title')}
       operatorLogo={{
         alt: t('operator logo alt'),
         imgUrl: logoInsee,
@@ -88,6 +80,6 @@ const { i18n } = declareComponentKeys<
   | 'service tag line'
   | { K: 'service title'; R: JSX.Element }
   | 'operator logo alt'
->()('Header')
+>()({ Header })
 
 export type I18n = typeof i18n
