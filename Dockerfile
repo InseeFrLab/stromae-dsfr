@@ -1,20 +1,22 @@
-# Production Env
-FROM nginx:stable-alpine
-COPY nginx.conf /etc/nginx/conf.d/default.conf    
-WORKDIR /usr/share/nginx/html
 
-## Copy dist to container
-ADD dist /usr/share/nginx/html
+FROM nginxinc/nginx-unprivileged:1.25-alpine
 
-# add non-root user
-RUN touch /var/run/nginx.pid
-RUN chown -R nginx:nginx /var/run/nginx.pid /usr/share/nginx/html /var/cache/nginx /var/log/nginx /etc/nginx/conf.d
+# Non root user
+ENV NGINX_USER_ID=101
+ENV NGINX_GROUP_ID=101
+ENV NGINX_USER=nginx
 
-# Make our shell script executable
-RUN chmod +x vite-envs.sh
+USER $NGINX_USER_ID
 
-# non root users cannot listen on 80
+# Add build to nginx root webapp
+COPY --chown=$NGINX_USER:$NGINX_USER dist /usr/share/nginx/html
+
+# Copy nginx configuration
+RUN rm etc/nginx/conf.d/default.conf
+COPY --chown=$NGINX_USER:$NGINX_USER nginx.conf etc/nginx/conf.d/
+RUN chmod 755 /usr/share/nginx/html/vite-envs.sh
+
+USER $NGINX_USER_ID
 EXPOSE 8080
-USER nginx
 
 ENTRYPOINT sh -c "/usr/share/nginx/html/vite-envs.sh && nginx -g 'daemon off;'"
