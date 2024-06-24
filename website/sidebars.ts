@@ -104,7 +104,6 @@ const sidebars: SidebarsConfig = {
       items: [
         "transversal/authentification",
         "transversal/routing",
-        "transversal/orchestratorRouting",
         "transversal/deposit-proof",
         "transversal/paradata",
         {
@@ -117,10 +116,10 @@ const sidebars: SidebarsConfig = {
               },
               collapsed: true,
               items: [
-                "orchestrator/transversal/personalization/header",
-                "orchestrator/transversal/personalization/welcome",
-                "orchestrator/transversal/personalization/postSubmit",
-                "orchestrator/transversal/personalization/footer",
+                "transversal/personalization/header",
+                "transversal/personalization/welcome",
+                "transversal/personalization/postSubmit",
+                "transversal/personalization/footer",
               ],
             },
       ],
